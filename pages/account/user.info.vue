@@ -4,26 +4,26 @@
       <view class="item-row">
         <text class="name">设置头像</text>
         <image class="figure" mode="widthFix" :src="userIcon" />
-        <image class="arrow" mode="widthFix" src="@/static/common/arrow-right-gray.png" />
+        <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
       <view class="item-row">
         <text class="name">用户名</text>
         <text class="value">{{username}}</text>
-        <image class="arrow" mode="widthFix" src="@/static/common/arrow-right-gray.png" />
+        <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
       <view class="item-row">
         <text class="name">性别</text>
         <text class="value">男</text>
-        <image class="arrow" mode="widthFix" src="@/static/common/arrow-right-gray.png" />
+        <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
     </view>
     <view class="section">
       <view class="item-row">
         <text class="name">修改密码</text>
-        <image class="arrow" mode="widthFix" src="@/static/common/arrow-right-gray.png" />
+        <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
     </view>
@@ -31,7 +31,7 @@
       <view class="item-row">
         <text class="name">更好手机号</text>
         <text class="value">15000000001</text>
-        <image class="arrow" mode="widthFix" src="@/static/common/arrow-right-gray.png" />
+        <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
     </view>
@@ -39,7 +39,11 @@
 </template>
 <script>
   import UserFigureIcon from "@/static/figure.png"
+  import grayRightArrowView from "@/components/accessoryview/gray.arrow";
   export default {
+    components: {
+      grayRightArrowView
+    },
     data() {
       return {
         userIcon: UserFigureIcon,

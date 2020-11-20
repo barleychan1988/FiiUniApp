@@ -13,7 +13,7 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	/*每个页面公共css */
 	body {
 		background-color: #f2f1f6;
