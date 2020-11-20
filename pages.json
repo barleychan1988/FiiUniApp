@@ -1,0 +1,106 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/henb/detail",
+			"style": {
+				"navigationBarTitleText": "HeNB详情"
+			}
+		},
+		{
+			"path": "pages/siriusfly/detail",
+			"style": {
+				"navigationBarTitleText": "SiriusFly详情"
+			}
+		},
+		{
+			"path": "pages/tools/index",
+			"style": {
+				"navigationBarTitleText": "路由工具"
+			}
+		},
+		{
+			"path":"pages/appMarket/index",
+			"style": {
+				"navigationBarTitleText": "应用市场",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path":"pages/appMarket/app.detail",
+			"style": {
+				"navigationBarTitleText": "应用详情",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path":"pages/shopmall/index",
+			"style": {
+				"navigationBarTitleText": "商城"
+			}
+		},
+		
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		
+		{
+			"path": "pages/account/user.info",
+			"style": {
+				"navigationBarTitleText": "修改资料"
+			}
+		},
+		{
+			"path":"pages/account/mine",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#007aff",
+		"backgroundColor": "#007aff"
+	},
+	"tabBar": {
+		"color":"#dbdbdb",
+		"selectedColor":"#00a7ff",
+		"borderStyle": "black",
+		"backgroundColor": "#FFFFFF",
+		"list": [
+			{
+				"pagePath":"pages/index/index",
+				"iconPath":"static/tabBar/device-gray.png",
+				"selectedIconPath":"static/tabBar/device.png",
+				"text":"我的设备"
+			},
+			{
+				"pagePath":"pages/tools/index",
+				"iconPath":"static/tabBar/setting-gray.png",
+				"selectedIconPath":"static/tabBar/setting.png",
+				"text":"工具"
+			},
+			{
+				"pagePath":"pages/appMarket/index",
+				"iconPath":"static/tabBar/appmarket-gray.png",
+				"selectedIconPath":"static/tabBar/appmarket.png",
+				"text":"应用市场"
+			},
+			{
+				"pagePath":"pages/shopmall/index",
+				"iconPath":"static/tabBar/cart-gray.png",
+				"selectedIconPath":"static/tabBar/cart.png",
+				"text":"商城"
+			}
+		]
+	}
+}
