@@ -33,6 +33,7 @@
 </script>
 <style lang='scss' scoped>
 .content {
+  overflow-x: hidden;
   .top {
     display: flex;
     padding: 60rpx 0;

@@ -13,9 +13,16 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	/*每个页面公共css */
 	body {
 		background-color: #f2f1f6;
+		overflow-x: hidden;
+		.content {
+			overflow-x: hidden;
+		}
+		.page {
+			overflow-x: hidden;
+		}
 	}
 </style>

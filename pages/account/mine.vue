@@ -96,6 +96,9 @@
   }
 </script>
 <style lang='scss' scoped>
+  .content {
+    overflow-x: hidden;
+  }
   .header-wrapper {
     background-color: $uni-color-primary;
     padding: 60rpx 0;

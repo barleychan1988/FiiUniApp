@@ -1,5 +1,5 @@
 {
-    "name" : "Test1120",
+    "name" : "工业富联",
     "appid" : "__UNI__6DB1998",
     "description" : "",
     "versionName" : "1.0.0",
@@ -52,7 +52,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wx2f1a0cac8d247ede",
         "setting" : {
             "urlCheck" : false
         },

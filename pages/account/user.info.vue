@@ -58,6 +58,7 @@
 </script>
 <style lang='scss' scoped>
 .content {
+  overflow-x: hidden;
   .section {
     margin-bottom: 20rpx;
     .item-row {

@@ -10,4 +10,7 @@
 </script>
 
 <style lang="scss" scoped>
+  .content {
+    overflow-x: hidden;
+  }
 </style>
