@@ -68,6 +68,7 @@
 
 <style lang="scss" scoped>
   .item {
+    background-color: white;
     height: 162rpx;
     border-bottom-color: $uni-border-separator;
     border-bottom-style: solid;

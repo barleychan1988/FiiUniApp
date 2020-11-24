@@ -8,10 +8,13 @@ export default params => {
     params.url = ServiceUrl + params.url;
   }
   const app = getApp();
-  const token = app.globalData && app.globalData.userInfo && app.globalData.userInfo.token;
+  const userInfo = app.globalData && app.globalData.userInfo;
+  const token = userInfo && app.globalData.userInfo.token;
+  const device_info = userInfo && app.globalData.userInfo.deviceInfo;
   params.header = {
     ...params.header,
-    token
+    token,
+    device_info
   }
   return new Promise((resolve, reject) => {
     uni.request({
@@ -37,25 +40,5 @@ export default params => {
         uni.hideLoading();
       }
     });
-    // wx.request({
-    //   ...params,
-    //   success(res) {
-    //     if (res.statusCode == 200 && res.data) {
-    //       res = res.data;
-    //       if (res.errno == 0 && res.data) {
-    //         const result = res.data;
-    //         resolve(result);
-    //       } else {
-    //         reject(res);
-    //       }
-    //     }
-    //   },
-    //   fail(err) {
-    //     reject(err);
-    //   },
-    //   complete() {
-    //     uni.hideLoading();
-    //   }
-    // });
   });
 }

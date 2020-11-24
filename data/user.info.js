@@ -2,6 +2,16 @@
 class UserInfo {
   constructor() {
     this.loadInfo();
+    // 获取设备信息
+    uni.getSystemInfo({
+      success: res => {
+        const deviceInfo = {...res};
+        delete deviceInfo.errMsg;
+        this.deviceInfo = JSON.stringify(deviceInfo);
+      },
+      fail: err => {
+      }
+    })
   }
   loadInfo = () => {
     try {

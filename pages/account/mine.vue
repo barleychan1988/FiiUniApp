@@ -47,14 +47,14 @@
           <gray-right-arrow-view />
           <view class="separator-line" />
         </view>
-        <view class="item">
+        <view class="item" @click="clickedSuggest">
           <image class="icon" mode="widthFix" src="@/static/mine/suggest.png"/>
           <text class="content">意见反馈</text>
           <gray-right-arrow-view />
         </view>
       </view>
       <view class="section">
-        <view class="item">
+        <view class="item" @click="clickedAbout">
           <image class="icon" mode="widthFix" src="@/static/mine/about.png"/>
           <text class="content">关于工业富联</text>
           <gray-right-arrow-view />
@@ -67,8 +67,8 @@
   </view>
 </template>
 <script>
-  import whiteRightArrowView from "@/components/accessoryview/white.arrow";
-  import grayRightArrowView from "@/components/accessoryview/gray.arrow";
+  import whiteRightArrowView from "@/components/custom/accessoryview/white.arrow";
+  import grayRightArrowView from "@/components/custom/accessoryview/gray.arrow";
   import UserFigureIcon from "@/static/figure.png"
   import whiteRightArrow from "@/static/common/arrow-right-white.png"
   import iconPhone from "@/static/mine/phone.png"
@@ -97,7 +97,13 @@
       },
       clickedUserInfo() {
         uni.navigateTo({url: '/pages/account/user.info'});
-      }
+      },
+      clickedSuggest() {
+        uni.navigateTo({url: '/pages/suggest/add'});
+      },
+      clickedAbout() {
+        uni.navigateTo({url: '/pages/account/about'});
+      },
     }
   }
 </script>

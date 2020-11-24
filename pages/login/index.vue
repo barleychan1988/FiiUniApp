@@ -2,20 +2,30 @@
   <view class="page">
     <view class='content'>
       <image :src="logo" class="logo" mode="widthFix"/>
-      <view class="input-wrapper" ref="inputpanel">
+      <view class="input-wrapper" ref="inputpanel" v-if="loginByAccount">
         <view class="row">
           <label class="label">账号</label>
           <input class="value" v-model="account" placeholder="请输入账号" maxlength="64" />
         </view>
         <view class="row">
           <label class="label">密码</label>
-          <input class="value" v-model="password" placeholder="请输入密码" maxlength="64" :password="hidePassword" />
+          <input class="value" v-model="password" placeholder="请输入密码" maxlength="64" :password="hidePassword" @confirm="btnClickedLogin" />
+        </view>
+      </view>
+      <view class="input-wrapper" ref="inputpanel" v-else>
+        <view class="row">
+          <label class="label">手机号</label>
+          <input class="value" v-model="account" placeholder="请输入手机号" maxlength="64" />
+        </view>
+        <view class="row">
+          <label class="label">验证码</label>
+          <input class="value" v-model="password" placeholder="请输入验证码" maxlength="64" :password="hidePassword" />
         </view>
       </view>
       <view class="btns-row">
         <view class="space"></view>
         <button class="btn" @click="btnClickedForgetPwd" plain="true">忘记密码</button>
-        <button class="btn" @click="btnClickedLoginBySMS" plain="true">短信登录</button>
+        <button class="btn" @click="btnClickedLoginBySMS" plain="true">{{loginByAccount ? '短信登录' : '密码登录'}}</button>
       </view>
       <button class="login-btn" :loading="loading" @click="btnClickedLogin" type="primary">登录</button>
     </view>
@@ -32,6 +42,8 @@
         hidePassword: true,
         loading: false,
 
+        loginByAccount: true,
+
         account: '',
         password: ''
       }
@@ -40,9 +52,13 @@
 
 		},
 		methods: {
-      btnClickedForgetPwd() {        
+      btnClickedForgetPwd() {
+        uni.navigateTo({
+          url: `/pages/account/password.reset?account=${this.account}`
+        });
       },
-      btnClickedLoginBySMS() {        
+      btnClickedLoginBySMS() {
+        this.loginByAccount = !this.loginByAccount;
       },
       btnClickedLogin() {
         if (this.account && this.password) {

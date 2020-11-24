@@ -10,7 +10,7 @@
 			</block>
 			<!-- #endif -->
 			<view class="nav_title_view" @click="toogleHenbListVisible">
-				<view><text class="uni-nav-bar-text">{{selectedHeNB && selectedHeNB.SN || ''}}</text></view>
+				<view><text class="uni-nav-bar-text">{{selectedHeNB && selectedHeNB.SN || '请选择设备'}}</text></view>
 				<image class="arrow-down" mode="widthFix" src="@/static/common/arrow-down-white.png"/>
 			</view>
 		</uni-nav-bar>
@@ -40,10 +40,9 @@
 			<div class="deviceDesc">{{deviceDescription}}</div>
 		</view>
 		<sirius-fly-list class="list" ref="siriusList" @refreshEnd="handleRefreshEnd"/>
-		<view class="henb-list-popview" v-if="showHenbList">
-			<view class="background-view" @click="clickedHiddenPopView" />
-			<henb-list class="henb-list" @selectItem="changedHeNBSelected" :currentSelected="selectedHeNB" />
-		</view>
+    <uni-popup ref="popup" type="top">
+			<henb-list class="henb-list" @selectItem="changedHeNBSelected" :currentSelected="selectedHeNB" />			
+		</uni-popup>
 	</view>
 </template>
 
@@ -66,26 +65,29 @@
 				deviceDescription: '深圳电信  主网络接入设备4/6',
 				selectedHeNB: null,
 
-				showHenbList: false,
 				title: ''
 			}
 		},
-		async onLoad() {
+		onLoad() {
 			uni.$on('refresh', () => {
 				this.$refs.siriusList.refreshList();
 			});
 			const app = getApp();
 			if (app.globalData.userInfo.token) {
-				const resUserInfo = await this.request({
+				this.request({
 					url: this.api.Account.GET_USER_INFO
+				}).then(res => {
+					if (res) {
+						const userInfo = getApp().globalData.userInfo;
+						userInfo.info = res;
+						this.selectedHeNB = res.henb;
+					} else {
+						app.globalData.utils.navigateToLogin();
+					}
+				}, err => {
+					app.globalData.utils.navigateToLogin();
 				});
-				if (resUserInfo) {
-					const userInfo = getApp().globalData.userInfo;
-					userInfo.info = resUserInfo;
-					return;
-				}
 			}
-			app.globalData.utils.navigateToLogin();
 		},
 		methods: {
 			handleAccount() {
@@ -96,15 +98,19 @@
 			},
 
 			toogleHenbListVisible() {
-				this.showHenbList = !this.showHenbList;
+        this.$refs.popup.open();
 			},
-			clickedHiddenPopView() {
-				this.showHenbList = false;
-			},
-
 			changedHeNBSelected(henb) {
-				this.selectedHeNB = henb;
-				this.toogleHenbListVisible();
+				this.request({
+					url: this.api.HeNB.SET_SELECT,
+					method: 'POST',
+					data: {sn: henb.SN}
+				}).then(res => {
+					this.selectedHeNB = henb;
+					this.$refs.popup.close();
+				}, err => {
+
+				})
 			},
 
 			// 下拉刷新完成
@@ -211,6 +217,9 @@
 		.henb-list-popview {
 			position: fixed;
 			top: 88rpx;
+			/* #ifdef MP */
+			top: calc(88rpx + var(--status-bar-height));
+			/* endif */
 			width: 100vw;
 			height: calc(100vh - 88rpx);
 			.background-view {
@@ -222,11 +231,18 @@
 			.henb-list {
 				background-color: white;
 				width: 100%;
-				height: 600rpx;
+				height: 162 * 4rpx;
 				overflow-y: auto;
 				position: absolute;
 				top: 0;
 			}
+		}
+		.henb-list {
+			width: 100vw;
+			top: calc(88rpx + var(--status-bar-height));
+			position: absolute;
+			max-height: 162*3rpx;
+			overflow-y: auto;
 		}
 	}
 	/* #ifdef MP-WEIXIN */

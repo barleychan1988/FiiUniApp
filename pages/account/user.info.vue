@@ -7,47 +7,60 @@
         <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
-      <view class="item-row">
+      <view class="item-row" @click="clickedSettingUsername">
         <text class="name">用户名</text>
         <text class="value">{{username}}</text>
         <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
-      <view class="item-row">
+      <view class="item-row" @click="clickedGenderChoose">
         <text class="name">性别</text>
-        <text class="value">男</text>
+        <text class="value">{{gender}}</text>
         <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
     </view>
     <view class="section">
-      <view class="item-row">
+      <view class="item-row" @click="clickedModifyPassword">
         <text class="name">修改密码</text>
         <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
     </view>
     <view class="section">
-      <view class="item-row">
+      <view class="item-row" @click="clickedModifyMobile">
         <text class="name">更好手机号</text>
         <text class="value">15000000001</text>
         <gray-right-arrow-view />
         <view class="separator-line" />
       </view>
     </view>
+    <uni-popup ref="popupgender" type="bottom">
+      <button class="gender-btn btn-man" @click="clickedChooseMan" type="default">男</button>
+      <button class="gender-btn btn-woman" @click="clickedChooseWoman" type="default">女</button>
+      <button class="gender-btn btn-cancel" @click="clickedCancelGenderChoose" type="default">取消</button>
+    </uni-popup>
+    <uni-popup ref="popupusername" type="dialog">
+      <uni-popup-dialog mode="input" title="通知" content="欢迎使用 uni-popup!" :before-close="true" @confirm="dialogConfirm" @close="dialogClose"></uni-popup-dialog>
+    </uni-popup>
   </view>
 </template>
 <script>
   import UserFigureIcon from "@/static/figure.png"
-  import grayRightArrowView from "@/components/accessoryview/gray.arrow";
+  import grayRightArrowView from "@/components/custom/accessoryview/gray.arrow";
+  import uniPopup from '@/components/uni-popup/uni-popup.vue'
+  import uniPopupDialog from '@/components/uni-popup/uni-popup-dialog.vue'
   export default {
     components: {
-      grayRightArrowView
+      grayRightArrowView,
+      uniPopup,
+      uniPopupDialog
     },
     data() {
       return {
         userIcon: UserFigureIcon,
-        username: ''
+        username: '',
+        gender: '男'
       }
     },
     onLoad() {
@@ -56,7 +69,30 @@
       this.username = userInfo.username || userInfo.info.username;
     },
     methods: {
-      
+      clickedModifyPassword() {
+        uni.navigateTo({url: '/pages/account/password.modify'});
+      },
+      clickedModifyMobile() {
+        uni.navigateTo({url: '/pages/account/mobile.modify'});
+      },
+      clickedGenderChoose() {
+        this.$refs.popupgender.open();
+      },
+      clickedCancelGenderChoose() {
+        this.$refs.popupgender.close();
+      },
+      clickedChooseWoman() {
+        this.gender = '女';
+        this.$refs.popupgender.close();
+      },
+      clickedChooseMan() {
+        this.gender = '男';
+        this.$refs.popupgender.close();
+      },
+
+      clickedSettingUsername() {
+        this.$refs.popupusername.open();        
+      }
     }
   }
 </script>
@@ -98,6 +134,20 @@
         width: 100%;
       }
     }
+  }
+  .gender-btn {
+    height: 88rpx;
+    margin: 0 30rpx;
+  }
+  .btn-cancel {
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+  }
+  .btn-man {
+    border-radius: 10rpx 10rpx 0 0;
+  }
+  .btn-woman {
+    border-radius: 0 0 10rpx 10rpx;
   }
 }
 </style>

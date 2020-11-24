@@ -54,9 +54,40 @@
 		},
 		
 		{
+			"path": "pages/suggest/add",
+			"style": {
+				"navigationBarTitleText": "意见反馈"
+			}
+		},
+		{
+			"path": "pages/account/about",
+			"style": {
+				"navigationBarTitleText": "关于"
+			}
+		},
+
+		{
 			"path": "pages/account/user.info",
 			"style": {
 				"navigationBarTitleText": "修改资料"
+			}
+		},
+		{
+			"path": "pages/account/mobile.modify",
+			"style": {
+				"navigationBarTitleText": "验证手机号"
+			}
+		},
+		{
+			"path": "pages/account/password.modify",
+			"style": {
+				"navigationBarTitleText": "修改密码"
+			}
+		},
+		{
+			"path": "pages/account/password.reset",
+			"style": {
+				"navigationBarTitleText": "重置密码"
 			}
 		},
 		{
