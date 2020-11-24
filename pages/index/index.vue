@@ -221,7 +221,7 @@
 			top: 88rpx;
 			/* #ifdef MP */
 			top: calc(88rpx + var(--status-bar-height));
-			/* endif */
+			/* #endif */
 			width: 100vw;
 			height: calc(100vh - 88rpx);
 			.background-view {
