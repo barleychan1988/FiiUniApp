@@ -7,7 +7,7 @@
     </view>
     <view class="list">
       <view class="section">
-        <view class="item">
+        <view class="item" @click="clickedMyOrder">
           <image class="icon" mode="widthFix" src="@/static/mine/order.png"/>
           <text class="content">我的订单</text>
           <text class="badge">0</text>
@@ -15,7 +15,7 @@
         </view>
       </view>
       <view class="section">
-        <view class="item">
+        <view class="item" @click="clickedSettingNotify">
           <image class="icon" mode="widthFix" src="@/static/mine/tongzhi.png"/>
           <text class="content">通知设置</text>
           <gray-right-arrow-view />
@@ -103,6 +103,12 @@
       },
       clickedAbout() {
         uni.navigateTo({url: '/pages/account/about'});
+      },
+      clickedMyOrder() {
+        uni.navigateTo({url: '/pages/shopmall/order/index'});
+      },
+      clickedSettingNotify() {
+        uni.navigateTo({url: '/pages/account/notify/setting'});
       },
     }
   }

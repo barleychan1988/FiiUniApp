@@ -5,10 +5,24 @@
 				<image :src="item.image" mode="heightFix" class="banner-image" />
 			</swiper-item>
 		</swiper>
-		<uni-segmented-control :current="current" :values="items.map(item => item.title)" @clickItem="onClickItem" style-type="text" active-color="#007aff"></uni-segmented-control>
+		<view class="segment-wrapper">
+			<view class="segment">
+				<view class="flex" />
+				<image class="icon" mode="widthFix" src="@/static/shopmall/icon_order.png" />
+				<button class="btn" @click="clickedMyOrder">我的订单</button>
+				<view class="flex" />
+				<view class="separator-line-v" />
+			</view>
+			<view class="segment">
+				<view class="flex" />
+				<image class="icon" mode="widthFix" src="@/static/shopmall/icon_order.png" />
+				<button class="btn" @click="clickedMyCoupon">优惠券</button>
+				<view class="flex" />
+			</view>
+		</view>
 		<view class="list">
-			<order-list v-if="current === 0"></order-list>
-			<view v-if="current === 1">您还未领取</view>
+			<order-list v-if="current === 1"></order-list>
+			<product-list v-if="current === 0" />
 		</view>
 	</view>
 </template>
@@ -16,10 +30,12 @@
 <script>
 	import {uniSegmentedControl} from '@dcloudio/uni-ui';
 	import orderList from './order-list'
+	import productList from './product/list'
 	export default {
 		components: {
 			uniSegmentedControl,
-			orderList
+			orderList,
+			productList
 		},
 		data() {
 			return {
@@ -54,10 +70,11 @@
 
 		},
 		methods: {
-			onClickItem(e) {
-				if (this.current !== e.currentIndex) {
-					this.current = e.currentIndex;
-				}
+			clickedMyOrder() {
+        uni.navigateTo({url: '/pages/shopmall/order/index'});
+			},
+			clickedMyCoupon() {
+        uni.navigateTo({url: '/pages/shopmall/order/index'});
 			}
 		}
 	}
@@ -85,6 +102,34 @@
 		}
 		.list {
 			height: calc(100% - 616rpx);
+		}
+		.segment-wrapper {
+			display: flex;
+			background-color: white;
+			.segment {
+				display: flex;
+				flex: 1;
+				.icon {
+					width: 40rpx;
+					margin: auto 0;
+				}
+				.btn {
+					background-color: white;
+					padding: 0 10rpx;
+				}
+				.btn::after {
+					border: 0;
+				}
+				.flex {
+					flex: 1;
+				}
+				.separator-line-v {
+					height: 50%;
+					width: 1px;
+					background-color: $uni-border-separator;
+					margin: auto 0;
+				}
+			}
 		}
 	}
 </style>

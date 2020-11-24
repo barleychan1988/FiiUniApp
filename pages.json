@@ -45,6 +45,18 @@
 				"navigationBarTitleText": "商城"
 			}
 		},
+		{
+			"path":"pages/shopmall/product/detail",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
+		},
+		{
+			"path":"pages/shopmall/order/index",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		},
 		
 		{
 			"path": "pages/login/index",
@@ -94,6 +106,14 @@
 			"path":"pages/account/mine",
 			"style": {
 				"navigationBarTitleText": "个人中心"
+			}
+		},
+
+
+		{
+			"path":"pages/account/notify/setting",
+			"style": {
+				"navigationBarTitleText": "通知设置"
 			}
 		}
 	],

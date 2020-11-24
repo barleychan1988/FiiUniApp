@@ -1,5 +1,5 @@
-const isDev = true;
-// const isDev = false;
+let isDev = true;
+isDev = false;
 
 export const ServiceUrl = isDev ? 'http://127.0.0.1:8360/api/' : 'http://106.14.14.130:9500/api/';
 export default {

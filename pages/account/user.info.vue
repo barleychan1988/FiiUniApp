@@ -41,7 +41,7 @@
       <button class="gender-btn btn-cancel" @click="clickedCancelGenderChoose" type="default">取消</button>
     </uni-popup>
     <uni-popup ref="popupusername" type="dialog">
-      <uni-popup-dialog mode="input" title="通知" content="欢迎使用 uni-popup!" :before-close="true" @confirm="dialogConfirm" @close="dialogClose"></uni-popup-dialog>
+      <uni-popup-dialog mode="input" title="设置用户名" :value="username" placeholder="长度限制：4-20个字符" :before-close="true" @confirm="settingUsernameOk" @close="settingUsernameCancel"></uni-popup-dialog>
     </uni-popup>
   </view>
 </template>
@@ -91,7 +91,20 @@
       },
 
       clickedSettingUsername() {
-        this.$refs.popupusername.open();        
+        this.$refs.popupusername.open();
+      },
+      settingUsernameCancel() {
+        this.$refs.popupusername.close();
+      },
+      settingUsernameOk(done, val) {
+        if (!val) {
+          uni.showToast({title: '请输入用户名', icon: 'none'})
+        } else if (val.length < 4 || val.length > 20) {
+          uni.showToast({title: '请输入有效的用户名', icon: 'none'})
+        } else {
+          this.username = val;
+          this.$refs.popupusername.close();
+        }
       }
     }
   }

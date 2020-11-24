@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="section-list" v-for="(item, index) in items" :key="index + item.title">
 			<view class="section-title">{{item.title}}</view>
-			<uni-grid :column="3" class="section-content">
+			<uni-grid :column="3" class="section-content" @change="itemClicked">
 				<uni-grid-item v-for="(itemSecondLevel, indexSecondLeve) in item.items" :key="'' + indexSecondLeve + item.title">
 					<view class="item-content">
 						<image :src="itemSecondLevel.icon" class="item-icon" mode="widthFix" />
@@ -32,7 +32,8 @@
 						items: [
 							{
 								title: '重启路由器',
-								icon: iconLuyouqi
+								icon: iconLuyouqi,
+								action: this.clickedRestart
 							},
 							{
 								title: '关闭',
@@ -77,7 +78,22 @@
 
 		},
 		methods: {
-
+			itemClicked(e) {
+				const index = e && e.detail && e.detail.index;
+				console.log(this.items);
+				const item = this.items[index];
+				if (item && item.action) {
+					item.action();
+				}
+				this.clickedRestart();
+			},
+			clickedRestart() {
+				uni.showModal({
+					content: "确定要重启设备吗？",
+					confirmText: "确定",
+					cancelText: "取消"
+				})
+			}
 		}
 	}
 </script>

@@ -7,7 +7,7 @@ class UserInfo {
       success: res => {
         const deviceInfo = {...res};
         delete deviceInfo.errMsg;
-        this.deviceInfo = JSON.stringify(deviceInfo);
+        this.deviceInfo = deviceInfo;
       },
       fail: err => {
       }

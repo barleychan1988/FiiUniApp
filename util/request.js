@@ -10,7 +10,7 @@ export default params => {
   const app = getApp();
   const userInfo = app.globalData && app.globalData.userInfo;
   const token = userInfo && app.globalData.userInfo.token;
-  const device_info = userInfo && app.globalData.userInfo.deviceInfo;
+  const device_info = userInfo && userInfo.deviceInfo && JSON.stringify(userInfo.deviceInfo);
   params.header = {
     ...params.header,
     token,

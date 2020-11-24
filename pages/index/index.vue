@@ -41,6 +41,8 @@
 		</view>
 		<sirius-fly-list class="list" ref="siriusList" @refreshEnd="handleRefreshEnd"/>
     <uni-popup ref="popup" type="top">
+			<view class="">
+			</view>
 			<henb-list class="henb-list" @selectItem="changedHeNBSelected" :currentSelected="selectedHeNB" />			
 		</uni-popup>
 	</view>
