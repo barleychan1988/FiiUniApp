@@ -33,7 +33,7 @@
 </template>
 
 <script>
-  import Logo from '@/static/logo.png';
+  import Logo from "static/logo.png";
   import md5 from "md5-node";
 	export default {
     data() {
@@ -149,11 +149,13 @@
           width: fit-content;
           padding-right: 30rpx;
           color: $uni-text-color;
+          line-height: inherit;
         }
         .value {
           font-size: 28rpx;
           height: 100%;
           flex: 1;
+          padding: 0;
         }
       }
     }

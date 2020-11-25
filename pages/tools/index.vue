@@ -16,9 +16,9 @@
 
 <script>
 	import {uniGrid, uniGridItem} from '@dcloudio/uni-ui';
-  import iconLuyouqi from "@/static/tool/luyouqi.png";
-  import iconForbidden from "@/static/tool/forbidden.png";
-  import iconSetting from "@/static/tool/setting.png";
+  import iconLuyouqi from "static/tool/luyouqi.png";
+  import iconForbidden from "static/tool/forbidden.png";
+  import iconSetting from "static/tool/setting.png";
 	export default {
 		components: {
 			uniGrid,

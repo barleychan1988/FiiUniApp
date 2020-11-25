@@ -1,6 +1,6 @@
 <template>
   <view class='content'>
-    <image src="@/static/logo.png" class="logo" mode="widthFix"/>
+    <image src="/static/logo.png" class="logo" mode="widthFix"/>
     <text class="version">1.0.0</text>
     <view class="list">
       <view class="row">

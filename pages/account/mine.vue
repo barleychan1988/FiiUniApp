@@ -8,7 +8,7 @@
     <view class="list">
       <view class="section">
         <view class="item" @click="clickedMyOrder">
-          <image class="icon" mode="widthFix" src="@/static/mine/order.png"/>
+          <image class="icon" mode="widthFix" src="/static/mine/order.png"/>
           <text class="content">我的订单</text>
           <text class="badge">0</text>
           <gray-right-arrow-view />
@@ -16,46 +16,46 @@
       </view>
       <view class="section">
         <view class="item" @click="clickedSettingNotify">
-          <image class="icon" mode="widthFix" src="@/static/mine/tongzhi.png"/>
+          <image class="icon" mode="widthFix" src="/static/mine/tongzhi.png"/>
           <text class="content">通知设置</text>
           <gray-right-arrow-view />
           <view class="separator-line" />
         </view>
         <view class="item">
-          <image class="icon" mode="widthFix" src="@/static/mine/msg.png"/>
+          <image class="icon" mode="widthFix" src="/static/mine/msg.png"/>
           <text class="content">消息中心</text>
           <gray-right-arrow-view />
         </view>
       </view>
       <view class="section">
         <view class="item">
-          <image class="icon" mode="widthFix" src="@/static/mine/phone.png"/>
+          <image class="icon" mode="widthFix" src="/static/mine/phone.png"/>
           <text class="content">宽带运营商通讯录</text>
           <gray-right-arrow-view />
           <view class="separator-line" />
         </view>
         <view class="item">
-          <image class="icon" mode="widthFix" src="@/static/mine/zhaohuimima.png"/>
+          <image class="icon" mode="widthFix" src="/static/mine/zhaohuimima.png"/>
           <text class="content">找回宽带账号</text>
           <gray-right-arrow-view />
         </view>
       </view>
       <view class="section">
         <view class="item">
-          <image class="icon" mode="widthFix" src="@/static/mine/Wechat.png"/>
+          <image class="icon" mode="widthFix" src="/static/mine/Wechat.png"/>
           <text class="content">微信客服</text>
           <gray-right-arrow-view />
           <view class="separator-line" />
         </view>
         <view class="item" @click="clickedSuggest">
-          <image class="icon" mode="widthFix" src="@/static/mine/suggest.png"/>
+          <image class="icon" mode="widthFix" src="/static/mine/suggest.png"/>
           <text class="content">意见反馈</text>
           <gray-right-arrow-view />
         </view>
       </view>
       <view class="section">
         <view class="item" @click="clickedAbout">
-          <image class="icon" mode="widthFix" src="@/static/mine/about.png"/>
+          <image class="icon" mode="widthFix" src="/static/mine/about.png"/>
           <text class="content">关于工业富联</text>
           <gray-right-arrow-view />
         </view>
@@ -69,9 +69,9 @@
 <script>
   import whiteRightArrowView from "@/components/custom/accessoryview/white.arrow";
   import grayRightArrowView from "@/components/custom/accessoryview/gray.arrow";
-  import UserFigureIcon from "@/static/figure.png"
-  import whiteRightArrow from "@/static/common/arrow-right-white.png"
-  import iconPhone from "@/static/mine/phone.png"
+  import UserFigureIcon from "static/figure.png"
+  import whiteRightArrow from "static/common/arrow-right-white.png"
+  import iconPhone from "static/mine/phone.png"
   export default {
     components: {
       whiteRightArrowView,

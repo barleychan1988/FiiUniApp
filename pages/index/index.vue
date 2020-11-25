@@ -6,12 +6,12 @@
 			</block>
 			<!-- #ifndef MP-WEIXIN -->
 			<block slot="right">
-				<image src="@/static/common/icon-more-white.png" class="nav_btn_icon"></image>
+				<image src="/static/common/icon-more-white.png" class="nav_btn_icon"></image>
 			</block>
 			<!-- #endif -->
 			<view class="nav_title_view" @click="toogleHenbListVisible">
 				<view><text class="uni-nav-bar-text">{{selectedHeNB && selectedHeNB.SN || '请选择设备'}}</text></view>
-				<image class="arrow-down" mode="widthFix" src="@/static/common/arrow-down-white.png"/>
+				<image class="arrow-down" mode="widthFix" src="/static/common/arrow-down-white.png"/>
 			</view>
 		</uni-nav-bar>
 		<view class="header-wrapper">

@@ -1,7 +1,7 @@
 
 <template>
   <view class='accessoryview-arrow'>
-    <image class="arrow" mode="widthFix" src="@/static/common/arrow-right-gray.png" />    
+    <image class="arrow" mode="widthFix" src="/static/common/arrow-right-gray.png" />    
   </view>
 </template>
 <style lang='scss' scoped>

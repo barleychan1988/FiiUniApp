@@ -12,7 +12,7 @@
 
 <script>
   import {uniNavBar, uniIcons, uniList} from '@dcloudio/uni-ui';
-  import HeNBIcon from '@/static/device/icon_smartCell.png';
+  import HeNBIcon from "static/device/icon_smartCell.png";
 
 	export default {
 		components: {

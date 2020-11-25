@@ -12,7 +12,7 @@
 
 <script>
   import {uniNavBar, uniIcons, uniList} from '@dcloudio/uni-ui';
-  import HeNBIcon from '@/static/device/icon_siriusFly.png';
+  import HeNBIcon from "static/device/icon_siriusFly.png";
 
 	export default {
 		components: {

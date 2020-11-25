@@ -46,7 +46,7 @@
   </view>
 </template>
 <script>
-  import UserFigureIcon from "@/static/figure.png"
+  import UserFigureIcon from "static/figure.png"
   import grayRightArrowView from "@/components/custom/accessoryview/gray.arrow";
   import uniPopup from '@/components/uni-popup/uni-popup.vue'
   import uniPopupDialog from '@/components/uni-popup/uni-popup-dialog.vue'

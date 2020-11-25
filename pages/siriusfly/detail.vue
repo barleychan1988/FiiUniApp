@@ -6,7 +6,7 @@
         <view class="item online-date">
           <text class="value">15:34</text>
           <view class="btn">
-            <image class="btn-icon" mode="widthFix" src="@/static/device/speed.png" />
+            <image class="btn-icon" mode="widthFix" src="/static/device/speed.png" />
             <text class="title">下线</text>
           </view>
         </view>
@@ -14,7 +14,7 @@
         <view class="item status">
           <text class="value">在线</text>
           <view class="btn">
-            <image class="btn-icon" mode="widthFix" src="@/static/device/speed.png" />
+            <image class="btn-icon" mode="widthFix" src="/static/device/speed.png" />
             <text class="title">下线</text>
           </view>
         </view>
@@ -38,8 +38,8 @@
   import api from '@/service/api';
   import {uniIcons} from '@dcloudio/uni-ui';
   
-  import iconSpeed from '@/static/device/speed.png';
-  import iconSiriusFly from '@/static/device/icon_siriusFly.png';
+  import iconSpeed from "static/device/speed.png";
+  import iconSiriusFly from "static/device/icon_siriusFly.png";
 
 	export default {
 		components: {

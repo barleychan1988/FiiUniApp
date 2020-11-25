@@ -6,12 +6,12 @@
     </view>
     <text class="header-title">提示：防蹭网等消息提醒的开关，请在对应的功能页面设置</text>
     <view class="row">
-      <image class="icon" mode="widthFix" src="@/static/common/icon_yes.png" />
+      <image class="icon" mode="widthFix" src="/static/common/icon_yes.png" />
       <text class="name">全部消息标记为已读</text>
       <view class="separator-line" />
     </view>
     <view class="row">
-      <image class="icon" mode="widthFix" src="@/static/common/icon_no.png" />
+      <image class="icon" mode="widthFix" src="/static/common/icon_no.png" />
       <text class="name">删除所有消息记录</text>
     </view>
   </view>

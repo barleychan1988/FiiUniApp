@@ -6,8 +6,8 @@
 </template>
 
 <script>
-  import iconHidden from "@/static/components/icon-yincnag-hui@3x.png";
-  import iconShow from "@/static/components/icon-xianshi@3x.png";
+  import iconHidden from "static/components/icon-yincnag-hui-3x.png";
+  import iconShow from "static/components/icon-xianshi-3x.png";
   export default {
     data() {
       return {

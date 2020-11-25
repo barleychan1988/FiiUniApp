@@ -8,14 +8,14 @@
 		<view class="segment-wrapper">
 			<view class="segment">
 				<view class="flex" />
-				<image class="icon" mode="widthFix" src="@/static/shopmall/icon_order.png" />
+				<image class="icon" mode="widthFix" src="/static/shopmall/icon_order.png" />
 				<button class="btn" @click="clickedMyOrder">我的订单</button>
 				<view class="flex" />
 				<view class="separator-line-v" />
 			</view>
 			<view class="segment">
 				<view class="flex" />
-				<image class="icon" mode="widthFix" src="@/static/shopmall/icon_order.png" />
+				<image class="icon" mode="widthFix" src="/static/shopmall/icon_order.png" />
 				<button class="btn" @click="clickedMyCoupon">优惠券</button>
 				<view class="flex" />
 			</view>
